@@ -98,6 +98,7 @@
     <ClCompile Include="..\..\src\Variability.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="itm_java_exports.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="itm.rc">

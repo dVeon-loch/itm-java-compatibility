@@ -49,6 +49,7 @@
     <ClCompile Include="..\..\src\TroposcatterLoss.cpp" />
     <ClCompile Include="..\..\src\ValidateInputs.cpp" />
     <ClCompile Include="..\..\src\Variability.cpp" />
+    <ClCompile Include="itm_java_exports.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="itm.rc" />
@@ -177,6 +178,8 @@
       </PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -198,6 +201,8 @@
       </PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
