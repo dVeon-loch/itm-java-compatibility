@@ -22,6 +22,7 @@
     <ClInclude Include="..\..\include\Enums.h" />
     <ClInclude Include="..\..\include\Errors.h" />
     <ClInclude Include="..\..\include\itm.h" />
+    <ClInclude Include="..\..\include\its_propagation_itm_ITM.h" />
     <ClInclude Include="..\..\include\resource.h" />
     <ClInclude Include="..\..\include\Warnings.h" />
     <ClInclude Include="resource.h" />
@@ -37,6 +38,7 @@
     <ClCompile Include="..\..\src\InitializePointToPoint.cpp" />
     <ClCompile Include="..\..\src\InverseComplementaryCumulativeDistributionFunction.cpp" />
     <ClCompile Include="..\..\src\itm_area.cpp" />
+    <ClCompile Include="..\..\src\itm_java_exports.cpp" />
     <ClCompile Include="..\..\src\itm_p2p.cpp" />
     <ClCompile Include="..\..\src\KnifeEdgeDiffraction.cpp" />
     <ClCompile Include="..\..\src\LinearLeastSquaresFit.cpp" />
@@ -49,7 +51,6 @@
     <ClCompile Include="..\..\src\TroposcatterLoss.cpp" />
     <ClCompile Include="..\..\src\ValidateInputs.cpp" />
     <ClCompile Include="..\..\src\Variability.cpp" />
-    <ClCompile Include="itm_java_exports.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="itm.rc" />
@@ -178,8 +179,7 @@
       </PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
-      <AdditionalIncludeDirectories>
-      </AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include\java\win32;$(SolutionDir)..\include\java;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -201,8 +201,7 @@
       </PrecompiledHeaderFile>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>StdCall</CallingConvention>
-      <AdditionalIncludeDirectories>
-      </AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include\java\win32;$(SolutionDir)..\include\java;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

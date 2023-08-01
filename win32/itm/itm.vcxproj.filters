@@ -19,6 +19,9 @@
     <ClInclude Include="resource.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\its_propagation_itm_ITM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -98,7 +101,9 @@
     <ClCompile Include="..\..\src\Variability.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="itm_java_exports.cpp" />
+    <ClCompile Include="..\..\src\itm_java_exports.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="itm.rc">
