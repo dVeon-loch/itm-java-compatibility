@@ -9,66 +9,66 @@ extern "C" {
 #endif
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_P2P_TLS
+	 * Method:    ITMP2PTLS
 	 * Signature: (DD[DIDDIDDIDDD)Lits/propagation/itm/ITMResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1P2P_1TLS
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PTLS
 	(JNIEnv*, jclass, jdouble, jdouble, jdoubleArray, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jdouble);
 
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_P2P_TLS_Ex
+	 * Method:    ITMP2PTLSEx
 	 * Signature: (DD[DIDDIDDIDDD)Lits/propagation/itm/ITMIntermediateValuesResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1P2P_1TLS_1Ex
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PTLSEx
 	(JNIEnv*, jclass, jdouble, jdouble, jdoubleArray, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jdouble);
 
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_P2P_CR
+	 * Method:    ITMP2PCR
 	 * Signature: (DD[DIDDIDDIDD)Lits/propagation/itm/ITMResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1P2P_1CR
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PCR
 	(JNIEnv*, jclass, jdouble, jdouble, jdoubleArray, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble);
 
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_P2P_CR_Ex
+	 * Method:    ITMP2PCREx
 	 * Signature: (DD[DIDDIDDIDD)Lits/propagation/itm/ITMIntermediateValuesResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1P2P_1CR_1Ex
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PCREx
 	(JNIEnv*, jclass, jdouble, jdouble, jdoubleArray, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble);
 
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_AREA_TLS
+	 * Method:    ITMAREATLS
 	 * Signature: (DDIIDDIDDIDDIDDD)Lits/propagation/itm/ITMResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1AREA_1TLS
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREATLS
 	(JNIEnv*, jclass, jdouble, jdouble, jint, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jdouble);
 
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_AREA_TLS_Ex
+	 * Method:    ITMAREATLSEx
 	 * Signature: (DDIIDDIDDIDDIDDD)Lits/propagation/itm/ITMIntermediateValuesResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1AREA_1TLS_1Ex
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREATLSEx
 	(JNIEnv*, jclass, jdouble, jdouble, jint, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jdouble);
 
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_AREA_CR
+	 * Method:    ITMAREACR
 	 * Signature: (DDIIDDIDDIDDIDD)Lits/propagation/itm/ITMResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1AREA_1CR
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREACR
 	(JNIEnv*, jclass, jdouble, jdouble, jint, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble);
 
 	/*
 	 * Class:     its_propagation_itm_ITM
-	 * Method:    ITM_AREA_CR_Ex
+	 * Method:    ITMAREACREx
 	 * Signature: (DDIIDDIDDIDDIDD)Lits/propagation/itm/ITMIntermediateValuesResult;
 	 */
-	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITM_1AREA_1CR_1Ex
+	JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREACREx
 	(JNIEnv*, jclass, jdouble, jdouble, jint, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble, jint, jdouble, jdouble);
 
 #ifdef __cplusplus

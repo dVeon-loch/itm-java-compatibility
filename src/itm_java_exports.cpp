@@ -2,14 +2,11 @@
 #include "..\include\Enums.h"
 #include "..\include\Errors.h"
 #include "..\include\its_propagation_itm_ITM.h"
+#include <jni.h>
 
-jobject GetITMResultObject(JNIEnv* env, double A_dB, long warnings, int errorCode) {
-	jclass ITMResultClass = env->FindClass("Lits/propagation/itm/ITMResult");
-	jmethodID ITMResultConstructor = env->GetMethodID(ITMResultClass, "<init>", "(DJI)V");
-	return env->NewObject(ITMResultClass, ITMResultConstructor, A_dB, warnings, errorCode);
-}
 
-jobject GetIntermediateValuesObject(JNIEnv* env, IntermediateValues& intermediateValues) {
+
+ jobject  GetIntermediateValuesObject(JNIEnv* env, IntermediateValues& intermediateValues) {
 	jclass jIntermediateValuesClass = env->FindClass("Lits/propagation/itm/ITMIntermediateValuesResult$IntermediateValues");
 	jobject IntermediateValuesObject = env->AllocObject(jIntermediateValuesClass);
 
@@ -42,14 +39,24 @@ jobject GetIntermediateValuesObject(JNIEnv* env, IntermediateValues& intermediat
 	return IntermediateValuesObject;
 }
 
-jobject GetITMIntermediateValuesResultObject(JNIEnv* env, double A_dB, long warnings, IntermediateValues& intermediateValues, int errorCode) {
+ jobject  GetITMIntermediateValuesResultObject(JNIEnv* env, double A_dB, long warnings, IntermediateValues& intermediateValues, int errorCode) {
 	jclass ITMIntermediateValuesResultClass = env->FindClass("its/propagation/itm/ITMIntermediateValuesResult");
 	jmethodID ITMIntermediateValuesResultConstructor = env->GetMethodID(ITMIntermediateValuesResultClass, "<init>", "(DJLits/propagation/itm/ITMIntermediateValuesResult$IntermediateValues;I)V");
 	
 	return env->NewObject(ITMIntermediateValuesResultClass, ITMIntermediateValuesResultConstructor, A_dB, warnings, GetIntermediateValuesObject(env, intermediateValues), errorCode);
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1TLS
+ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
+	 return JNI_VERSION_1_8;
+ }
+
+ jobject  GetITMResultObject(JNIEnv* env, double A_dB, long warnings, int errorCode) {
+	 jclass ITMResultClass = env->FindClass("its/propagation/itm/ITMResult");
+	 jmethodID ITMResultConstructor = env->GetMethodID(ITMResultClass, "<init>", "(DJI)V");
+	 return env->NewObject(ITMResultClass, ITMResultConstructor, A_dB, warnings, errorCode);
+ }
+
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PTLS
 (JNIEnv* env, jclass javaClass, jdouble h_tx__meter, jdouble h_rx__meter, jdoubleArray pfl, jint climate, jdouble N_0, jdouble f__mhz, jint pol, jdouble epsilon, jdouble sigma, jint mdvar, jdouble time, jdouble location, jdouble situation) {
 	double A_dB;
 	long warnings;
@@ -61,7 +68,7 @@ JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1TLS
 }
 
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1TLS_1Ex
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PTLSEx
 (JNIEnv* env, jclass, jdouble h_tx__meter, jdouble h_rx__meter, jdoubleArray pfl, jint climate, jdouble N_0, jdouble f__mhz, jint pol, jdouble epsilon, jdouble sigma, jint mdvar, jdouble time, jdouble location, jdouble situation) {
 	double A_dB;
 	long warnings;
@@ -74,7 +81,7 @@ JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1TLS_1Ex
 }
 
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1CR
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PCR
 (JNIEnv* env, jclass javaClass, jdouble h_tx__meter, jdouble h_rx__meter, jdoubleArray pfl, jint climate, jdouble N_0, jdouble f__mhz, jint pol, jdouble epsilon, jdouble sigma, jint mdvar, jdouble confidence, jdouble reliability) {
 	double A_dB;
 	long warnings;
@@ -86,7 +93,7 @@ JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1CR
 }
 
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1CR_1Ex
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMP2PCREx
 (JNIEnv* env, jclass javaClass, jdouble h_tx__meter,
 	jdouble h_rx__meter, jdoubleArray pfl, jint climate, jdouble N_0, jdouble f__mhz, jint pol,
 	jdouble epsilon, jdouble sigma, jint mdvar, jdouble confidence, jdouble reliability) {
@@ -101,7 +108,7 @@ JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1P2P_1CR_1Ex
 }
 
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1AREA_1TLS
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREATLS
 (JNIEnv* env, jclass javaClass, jdouble h_tx__meter, jdouble h_rx__meter,
 	jint tx_site_criteria, jint rx_site_criteria, jdouble d__km, jdouble delta_h__meter,
 	jint climate, jdouble N_0, jdouble f__mhz, jint pol, jdouble epsilon, jdouble sigma,
@@ -116,7 +123,7 @@ JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1AREA_1TLS
 }
 
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1AREA_1TLS_1Ex
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREATLSEx
 (JNIEnv* env, jclass javaClass, jdouble h_tx__meter,
 	jdouble h_rx__meter, jint tx_site_criteria, jint rx_site_criteria, jdouble d__km,
 	jdouble delta_h__meter, jint climate, jdouble N_0, jdouble f__mhz, jint pol, jdouble epsilon,
@@ -134,7 +141,7 @@ JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1AREA_1TLS_1Ex
 }
 
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1AREA_1CR
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREACR
 (JNIEnv* env, jclass javaClass, jdouble h_tx__meter, jdouble h_rx__meter,
 	jint tx_site_criteria, jint rx_site_criteria, jdouble d__km, jdouble delta_h__meter,
 	jint climate, jdouble N_0, jdouble f__mhz, jint pol, jdouble epsilon, jdouble sigma,
@@ -149,7 +156,7 @@ JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1AREA_1CR
 }
 
 
-JNIEXPORT jobject JNICALL Java_com_github_dveonloch_ITM_ITM_1AREA_1CR_1Ex
+JNIEXPORT jobject JNICALL Java_its_propagation_itm_ITM_ITMAREACREx
 (JNIEnv* env, jclass javaClass, jdouble h_tx__meter,
 	jdouble h_rx__meter, jint tx_site_criteria, jint rx_site_criteria, jdouble d__km,
 	jdouble delta_h__meter, jint climate, jdouble N_0, jdouble f__mhz, jint pol, jdouble epsilon,
